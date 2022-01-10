@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test.ViewController">
+    <SplitPane dividerPositions="0.2508361204013378" layoutX="77.0" layoutY="69.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: white;">
+                <Button layoutX="36.0" layoutY="370.0" mnemonicParsing="false" onAction="#exitButtonAction" prefWidth="100.0" text="Exit" AnchorPane.bottomAnchor="0.0" />
+                <Button fx:id="newFlightButton" layoutX="62.0" layoutY="35.0" mnemonicParsing="false" onAction="#newFlightButtonAction" text="New Flight" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <Button fx:id="newReservationButton" layoutX="54.0" layoutY="70.0" mnemonicParsing="false" onAction="#newReservationButtonAction" text="New Reservation" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+                <Button fx:id="displaySeatMapButton" layoutX="54.0" layoutY="104.0" mnemonicParsing="false" onAction="#displaySeatMapButtonAction" text="Display Seat Map" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+                <Button fx:id="listAllFlightsButton" layoutX="54.0" layoutY="160.0" mnemonicParsing="false" onAction="#listAllFlightsButtonAction" text="List All Flights" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0" />
+                <Button fx:id="listAllReservationsButton" layoutX="62.0" layoutY="199.0" mnemonicParsing="false" onAction="#listAllReservationsButtonAction" text="List All Reservations" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+                <Button fx:id="listAllFlightReservationsButton" layoutY="224.0" mnemonicParsing="false" onAction="#listAllFlightReservationsAction" text="List Flight Reservations" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0" />
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="443.0" style="-fx-background-color: white; -fx-border-color: black;">
+                <Pane fx:id="exitPane" layoutX="10.0" layoutY="10.0" prefHeight="398.0" prefWidth="445.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Label layoutX="183.0" layoutY="178.0" text="Would you like to exit?">
+                        <font>
+                            <Font size="15.0" />
+                        </font>
+                    </Label>
+                    <Button layoutX="233.0" layoutY="199.0" mnemonicParsing="false" onAction="#exitApplication" prefHeight="25.0" prefWidth="51.0" text="Exit" />
+                </Pane>
+                <Pane fx:id="newReservationPane" layoutX="24.0" layoutY="24.0" prefHeight="398.0" prefWidth="517.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Label text="  Create new reservation">
+                        <font>
+                            <Font size="24.0" />
+                        </font>
+                    </Label>
+                    <Button layoutX="122.0" layoutY="174.0" mnemonicParsing="false" onAction="#addNewReservation" text="Add Reservation" />
+                    <Label layoutX="14.0" layoutY="46.0" text="Flight Number" />
+                    <Label layoutX="14.0" layoutY="78.0" text="Passenger ID" />
+                    <Label layoutX="14.0" layoutY="112.0" text="Passenger Name" />
+                    <Label layoutX="14.0" layoutY="144.0" text="Seat Number" />
+                    <TextField fx:id="flightNumberRes" layoutX="122.0" layoutY="42.0" promptText="Flight Number" />
+                    <TextField fx:id="PassengerIDRes" layoutX="122.0" layoutY="74.0" promptText="Passenger ID" />
+                    <TextField fx:id="passengerNameRes" layoutX="122.0" layoutY="108.0" promptText="Passenger Name" />
+                    <TextField fx:id="seatNumberRes" layoutX="122.0" layoutY="140.0" promptText="Seat Number" />
+                </Pane>
+                <Pane fx:id="newFlightPane" prefHeight="398.0" prefWidth="517.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Label alignment="TOP_LEFT" text="  Add a new flight">
+                        <font>
+                            <Font size="24.0" />
+                        </font>
+                    </Label>
+                    <TextField fx:id="flightNumField" layoutX="134.0" layoutY="54.0" promptText="Flight Number" />
+                    <TextField fx:id="flightDateField" layoutX="134.0" layoutY="93.0" promptText="Flight Date" />
+                    <TextField fx:id="departureTimeField" layoutX="134.0" layoutY="131.0" promptText="Departure Time" />
+                    <TextField fx:id="arrivalTimeField" layoutX="134.0" layoutY="174.0" promptText="Arrival Time" />
+                    <TextField fx:id="departureCityField" layoutX="134.0" layoutY="220.0" promptText="Departure City" />
+                    <TextField fx:id="arrivalCityField" layoutX="134.0" layoutY="263.0" promptText="Arrival City" />
+                    <TextField fx:id="availableSeatsField" layoutX="134.0" layoutY="304.0" promptText="Available Seats" />
+                    <Label layoutX="19.0" layoutY="58.0" text="Flight Number:" />
+                    <Label layoutX="19.0" layoutY="97.0" text="Flight Date:" />
+                    <Label layoutX="19.0" layoutY="178.0" text="Arrival Time:" />
+                    <Label layoutX="19.0" layoutY="224.0" text="Departure City:" />
+                    <Label layoutX="19.0" layoutY="135.0" text="Departure Time:" />
+                    <Label layoutX="19.0" layoutY="267.0" text="Arrival City:" />
+                    <Label layoutX="19.0" layoutY="308.0" text="Available Seats:" />
+                    <Button layoutX="173.0" layoutY="349.0" mnemonicParsing="false" onAction="#addFlight" text="Add Flight" />
+                </Pane>
+                <Pane fx:id="seatMapPane" layoutX="24.0" layoutY="24.0" prefHeight="398.0" prefWidth="445.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Label text="  Display seat map ">
+                        <font>
+                            <Font size="24.0" />
+                        </font>
+                    </Label>
+                    <TextArea fx:id="seatMapArea" editable="false" layoutX="14.0" layoutY="35.0" prefHeight="353.0" prefWidth="492.0" />
+                    <Button layoutX="260" layoutY="5.0" mnemonicParsing="false" onAction="#updateSeatMap" text="Show" />
+                    <TextField fx:id="flightNumberOnMapField" layoutX="317.0" layoutY="5.0" promptText="Flight Number Here" />
+                </Pane>
+                <Pane fx:id="listAllFlightsPane" layoutX="34.0" layoutY="34.0" prefHeight="398.0" prefWidth="445.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Label layoutY="-3.0" text="  Information for all flights">
+                        <font>
+                            <Font size="24.0" />
+                        </font>
+                    </Label>
+                    <TextArea fx:id="listAllFlightsArea" editable="false" layoutX="11.0" layoutY="39.0" prefHeight="353.0" prefWidth="492.0" />
+                </Pane>
+                <Pane fx:id="listAllFlightReservationsPane" layoutX="54.0" layoutY="54.0" prefHeight="398.0" prefWidth="505.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Label alignment="TOP_LEFT" prefHeight="70.0" prefWidth="517.0" text="  List all flight reservations ">
+                        <font>
+                            <Font size="24.0" />
+                        </font>
+                    </Label>
+                    <TextArea fx:id="listOfSpecificPassengerReservations" layoutX="20.0" layoutY="99.0" prefHeight="317.0" prefWidth="517.0" />
+                    <TextField fx:id="specificFlightTextField" layoutX="123.0" layoutY="65.0" promptText="Enter Flight Number" />
+                    <Button fx:id="SpecificFlightButton" layoutX="348.0" layoutY="65.0" mnemonicParsing="false" onAction="#showSpecificFlightReservations" text="Search" />
+                </Pane>
+                <Pane fx:id="listAllReservationsPane" layoutX="10.0" layoutY="10.0" prefHeight="398.0" prefWidth="445.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Label alignment="TOP_LEFT" prefHeight="70.0" prefWidth="453.0" text="List all passenger reservations for all flights" wrapText="true">
+                        <font>
+                            <Font size="24.0" />
+                        </font>
+                    </Label>
+                    <TextArea fx:id="listOfAllPassengerReservations" layoutX="14.0" layoutY="48.0" prefHeight="364.0" prefWidth="517.0" />
+                </Pane>
+            </AnchorPane>
+        </items>
+    </SplitPane>
+</AnchorPane>
